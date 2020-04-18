@@ -2,6 +2,10 @@ $color-sucсess: #4ea31e;
 $color-process: #f49530;
 $color-empty: #e5e5e5;
 
+body {
+  padding: 20px;
+}
+
 .timeline {
   $block: &;
 
