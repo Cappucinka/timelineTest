@@ -10,7 +10,6 @@ body {
   $block: &;
 
   $steps: 4;
-  $step-width: (100% / $steps);
 
   $step-point-radius: 5px;
   $step-line-height: 2px;
@@ -30,7 +29,6 @@ body {
     display: inline-block;
     position: relative;
     list-style-type: none;
-    width: $step-width;
     height: $step-line-height;
     background-color: $color-empty;
 
@@ -79,5 +77,37 @@ body {
     line-height: $step-label-height;
     font-family: Arial, Helvetica, sans-serif;
     color: #979694;
+  }
+
+  &_label-horizontal_point {
+    $step-width: 100% / ($steps - 1);
+
+    #{$block}__step {
+      width: $step-width;
+    }
+
+    #{$block}__step:last-child {
+      &:before {
+        left: -($step-point-radius * 2);
+      }
+
+      #{$block}__step-label {
+        right: 100%;
+      }
+    }
+  }
+
+  &_label-horizontal_line {
+    $step-width: 100% / $steps;
+
+    #{$block}__step {
+      width: $step-width;
+    }
+
+    #{$block}__step-label {
+      left: 0;
+      right: 0;
+      text-align: center;
+    }
   }
 }
