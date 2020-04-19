@@ -15,8 +15,6 @@ body {
 .timeline {
   $block: &;
 
-  $steps: 4;
-
   $step-line-height: 2px;
   $step-point-radius: 5px;
   $step-point-offset: 2px;
@@ -115,12 +113,6 @@ body {
   }
 
   &_label-horizontal_point {
-    $step-width: 100% / ($steps - 1);
-
-    #{$block}__step {
-      width: $step-width;
-    }
-
     #{$block}__step-label {
       text-align: center;
       left: -($step-label-width / 2);
@@ -131,10 +123,6 @@ body {
         text-align: left;
         left: $step-point-radius;
       }
-    }
-
-    #{$block}__step:nth-child(#{$steps - 1}) {
-      padding-right: ($step-point-radius * 2) + $step-point-offset;
     }
 
     #{$block}__step:last-child {
@@ -150,11 +138,7 @@ body {
   }
 
   &_label-horizontal_line {
-    $step-width: 100% / $steps;
-
     #{$block}__step {
-      width: $step-width;
-
       &:last-child {
         padding-right: ($step-point-radius * 2) + $step-point-offset;
       }
@@ -183,6 +167,26 @@ body {
   &_label-vetical_bottom {
     #{$block}__step-label {
       bottom: -($step-label-height + $step-label-offset);
+    }
+  }
+
+  @for $steps-count from 2 through 10 {
+    &_steps-count_#{$steps-count} {
+      &#{$block}_label-horizontal_point {
+        #{$block}__step {
+          width: 100% / ($steps-count - 1);
+
+          &:nth-child(#{$steps-count - 1}) {
+            padding-right: ($step-point-radius * 2) + $step-point-offset;
+          }
+        }
+      }
+
+      &#{$block}_label-horizontal_line {
+        #{$block}__step {
+          width: 100% / $steps-count;
+        }
+      }
     }
   }
 }
