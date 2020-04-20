@@ -65,7 +65,7 @@ body {
     }
 
     &:after {
-      display: none
+      display: none;
     }
 
     &:first-child {
@@ -89,7 +89,8 @@ body {
   }
 
   &__step_status_success {
-    &:before {
+    &:before,
+    &:last-child:after {
       border-color: $color-sucсess;
       background-color: $color-sucсess;
     }
