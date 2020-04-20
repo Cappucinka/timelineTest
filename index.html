@@ -9,6 +9,65 @@
 </head>
 <body>
   <main class="wrapper">
+    <h2>Генерируется на jquery</h2>
+
+    <label>
+      Количество шагов
+      <select id="steps-count">
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4" selected>4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+      </select>
+    </label>
+
+    <label>
+      Текущий шаг
+      <select id="current-step">
+        <option value="1">1</option>
+        <option value="2" selected>2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+      </select>
+    </label>
+    <br>
+
+    <label>
+      Горизонтальное расположение лейбла
+      <select id="label-position-horizontal">
+        <option value="point">По центру чек-поинта</option>
+        <option value="line">По центру прогресс-линии;</option>
+      </select>
+    </label>
+    <br>
+
+    <label>
+      Вертикальное расположение лейбла
+      <select id="label-position-vertical">
+        <option value="top">Над таймлайном</option>
+        <option value="bottom">Под таймлайном</option>
+      </select>
+    </label>
+
+    <div id="result">
+      <div class="loader">
+        Загрузка...
+      </div>
+    </div>
+
+    <h2>Как на макете</h2>
+
     <ul class="timeline timeline_label-horizontal_point timeline_label-vetical_top timeline_steps-count_4">
       <li class="timeline__step timeline__step_status_success">
         <span class="timeline__step-label">Step 1</span>
@@ -85,5 +144,12 @@
       </li>
     </ul>
   </main>
+
+  <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"
+  ></script>
+  <script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

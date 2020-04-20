@@ -12,6 +12,13 @@ body {
   margin: 0 auto;
 }
 
+.loader {
+  box-sizing: border-box;
+  height: 76px;
+  text-align: center;
+  padding-top: 30px;
+}
+
 .timeline {
   $block: &;
 
