@@ -30,6 +30,8 @@ body {
   $step-label-offset: 7px;
 
   width: 100%;
+  display: flex;
+  justify-content: stretch;
   margin: 30px 0 0;
   padding: ($step-label-height + $step-label-offset) 0;
   position: relative;
@@ -39,7 +41,8 @@ body {
   overflow: hidden;
 
   &__step {
-    display: inline-block;
+    display: block;
+    flex-grow: 1;
     position: relative;
     list-style-type: none;
     box-sizing: border-box;
@@ -74,11 +77,6 @@ body {
       &:before {
         left: 0;
       }
-    }
-
-    &:last-child:after {
-      display: block;
-      right: 0;
     }
   }
 
@@ -134,6 +132,9 @@ body {
     }
 
     #{$block}__step:last-child {
+      flex-grow: 0;
+      padding: 0;
+
       &:before {
         left: -($step-point-radius * 2);
       }
@@ -143,12 +144,21 @@ body {
         left: -($step-label-width + $step-point-radius);
       }
     }
+
+    #{$block}__step:nth-last-child(2) {
+      padding-right: ($step-point-radius * 2) + $step-point-offset;
+    }
   }
 
   &_label-horizontal_line {
     #{$block}__step {
       &:last-child {
         padding-right: ($step-point-radius * 2) + $step-point-offset;
+
+        &:after {
+          display: block;
+          right: 0;
+        }
       }
     }
 
@@ -175,26 +185,6 @@ body {
   &_label-vetical_bottom {
     #{$block}__step-label {
       bottom: -($step-label-height + $step-label-offset);
-    }
-  }
-
-  @for $steps-count from 2 through 10 {
-    &_steps-count_#{$steps-count} {
-      &#{$block}_label-horizontal_point {
-        #{$block}__step {
-          width: 100% / ($steps-count - 1);
-
-          &:nth-child(#{$steps-count - 1}) {
-            padding-right: ($step-point-radius * 2) + $step-point-offset;
-          }
-        }
-      }
-
-      &#{$block}_label-horizontal_line {
-        #{$block}__step {
-          width: 100% / $steps-count;
-        }
-      }
     }
   }
 }

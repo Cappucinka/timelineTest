@@ -8,7 +8,6 @@ $(document).ready(function() {
     var result = '';
 
     result += '<ul class="timeline' +
-      ' timeline_steps-count_' + stepsCount +
       ' timeline_label-horizontal_' + labelPositionHorizontal +
       ' timeline_label-vetical_' + labelPositionVertical +
       '">';
@@ -21,7 +20,7 @@ $(document).ready(function() {
       if (i == currentStep) {
         result += ' timeline__step_status_process';
       }
-      result += '">'
+      result += '">';
       result += '<span class="timeline__step-label">Step ' + i + '</span>';
       result += '<span class="timeline__step-line"></span>';
       result += '</li>';
