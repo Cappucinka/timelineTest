@@ -118,7 +118,7 @@ body {
     color: #979694;
   }
 
-  &_label-horizontal_point {
+  @mixin label-horizontal_point() {
     #{$block}__step-label {
       text-align: center;
       left: -($step-label-width / 2);
@@ -150,7 +150,7 @@ body {
     }
   }
 
-  &_label-horizontal_line {
+  @mixin label-horizontal_line {
     #{$block}__step {
       &:last-child {
         padding-right: ($step-point-radius * 2) + $step-point-offset;
@@ -176,15 +176,35 @@ body {
     }
   }
 
-  &_label-vetical_top {
+  @mixin label-vetical_top {
     #{$block}__step-label {
       top: -($step-label-height + $step-label-offset);
     }
   }
 
-  &_label-vetical_bottom {
+  @mixin label-vetical_bottom {
     #{$block}__step-label {
       bottom: -($step-label-height + $step-label-offset);
     }
+  }
+
+  &_label-position_point-top {
+    @include label-horizontal_point;
+    @include label-vetical_top;
+  }
+
+  &_label-position_point-bottom {
+    @include label-horizontal_point;
+    @include label-vetical_bottom;
+  }
+
+  &_label-position_line-top {
+    @include label-horizontal_line;
+    @include label-vetical_top;
+  }
+
+  &_label-position_line-bottom {
+    @include label-horizontal_line;
+    @include label-vetical_bottom;
   }
 }

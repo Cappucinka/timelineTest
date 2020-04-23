@@ -2,14 +2,12 @@ $(document).ready(function() {
   var renderTimeline = function() {
     var stepsCount = $('#steps-count').val();
     var currentStep = $('#current-step').val();
-    var labelPositionHorizontal = $('#label-position-horizontal').val();
-    var labelPositionVertical = $('#label-position-vertical').val();
+    var labelPosition = $('#label-position').val();
 
     var result = '';
 
     result += '<ul class="timeline' +
-      ' timeline_label-horizontal_' + labelPositionHorizontal +
-      ' timeline_label-vetical_' + labelPositionVertical +
+      ' timeline_label-position_' + labelPosition +
       '">';
 
     for (var i = 1; i <= stepsCount; i++) {
@@ -33,7 +31,7 @@ $(document).ready(function() {
 
   renderTimeline();
 
-  $('#steps-count, #current-step, #label-position-horizontal, #label-position-vertical').on(
+  $('#steps-count, #current-step, #label-position').on(
     'change',
     function(event) {
       renderTimeline();

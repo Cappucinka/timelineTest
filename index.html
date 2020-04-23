@@ -44,19 +44,12 @@
     <br>
 
     <label>
-      Горизонтальное расположение лейбла
-      <select id="label-position-horizontal">
-        <option value="point">По центру чек-поинта</option>
-        <option value="line">По центру прогресс-линии</option>
-      </select>
-    </label>
-    <br>
-
-    <label>
-      Вертикальное расположение лейбла
-      <select id="label-position-vertical">
-        <option value="top">Над таймлайном</option>
-        <option value="bottom">Под таймлайном</option>
+      Расположение лейбла
+      <select id="label-position">
+        <option value="point-top">По центру чек-поинта над таймлайном</option>
+        <option value="line-top">По центру прогресс-линии над таймлайном</option>
+        <option value="point-bottom">По центру чек-поинта под таймлайном</option>
+        <option value="line-bottom">По центру прогресс-линии под таймлайном</option>
       </select>
     </label>
 
@@ -68,7 +61,7 @@
 
     <h2>Как на макете</h2>
 
-    <ul class="timeline timeline_label-horizontal_point timeline_label-vetical_top">
+    <ul class="timeline timeline_label-position_point-top">
       <li class="timeline__step timeline__step_status_success">
         <span class="timeline__step-label">Step 1</span>
         <span class="timeline__step-line"></span>
@@ -87,7 +80,7 @@
       </li>
     </ul>
 
-    <ul class="timeline timeline_label-horizontal_line timeline_label-vetical_top">
+    <ul class="timeline timeline_label-position_line-top">
       <li class="timeline__step timeline__step_status_success">
         <span class="timeline__step-label">Step 1</span>
         <span class="timeline__step-line"></span>
@@ -106,7 +99,7 @@
       </li>
     </ul>
 
-    <ul class="timeline timeline_label-horizontal_point timeline_label-vetical_bottom">
+    <ul class="timeline timeline_label-position_point-bottom">
       <li class="timeline__step timeline__step_status_success">
         <span class="timeline__step-label">Step 1</span>
         <span class="timeline__step-line"></span>
@@ -125,7 +118,7 @@
       </li>
     </ul>
 
-    <ul class="timeline timeline_label-horizontal_line timeline_label-vetical_bottom">
+    <ul class="timeline timeline_label-position_line-bottom">
       <li class="timeline__step timeline__step_status_success">
         <span class="timeline__step-label">Step 1</span>
         <span class="timeline__step-line"></span>
